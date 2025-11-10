@@ -33,6 +33,22 @@
 
 <div class="recados">
     <h2>Recados Antigos</h2>
+
+    @if($recados->isEmpty())
+        <p>Nenhum recado deixado ainda.</p>
+    @else
+        @foreach($recados as $recado)
+            <div class="recado">
+                <p>
+                    <strong>{{ $recado->name }}</strong>
+                    <em>em ({{ $recado->created_at->format('d/m/Y H:i') }})</em>
+                </p>
+                <p>{{ $recado->message }}</p>
+            </div>
+        @endforeach
+    @endif
+
 </div>
+
 </body>
 </html>
