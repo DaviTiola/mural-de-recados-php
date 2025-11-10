@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RecadoController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [RecadoController::class, 'index']);
+
+Route::post('/', [RecadoController::class, 'store']);
